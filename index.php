@@ -27,13 +27,23 @@ if(isset($_GET['submit'])){
 			<div class="form-group">
 				<div class="row">
 					<label for="textInput">Your Text</label>
-					<textarea name="textInput" class="form-control"></textarea>	
+					<textarea name="textInput" class="form-control">
+						<?php
+						if (isset($_GET['textInput'])) {
+							echo $_GET['textInput'];
+						}
+						?>
+					</textarea>	
 				</div>
 			</div>
 			<div class="form-group">
 				<div class="row">
 					<label for="transformInput text-left">Your Command</label>
-					<input type="text" class="form-control" name="transformInput" placeholder="H = horizontal flip, V = vertical flip, 5 = linear shift to right by 5 spaces, -5 = linear shift to left by 5 spaces. Example: H, V, 5">
+					<input type="text" class="form-control" name="transformInput" placeholder="H = horizontal flip, V = vertical flip, 5 = linear shift to right by 5 spaces, -5 = linear shift to left by 5 spaces. Example: H, V, 5" value="<?php
+						if (isset($_GET['transformInput'])) {
+							echo $_GET['transformInput'];
+						}
+						?>">
 				</div>
 			</div>
 			<div>
